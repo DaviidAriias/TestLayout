@@ -1,12 +1,12 @@
 {
-    "name": "Layout App DAvivienda",
-    "short_name": "Layout App DAvivienda",
+    "name": "Layout App Davivienda",
+    "short_name": "Layout App Davivienda",
     "theme_color": "#dd141d",
     "background_color": "#dd141d",
     "display": "fullscreen",
     "orientation": "portrait",
-    "scope": "https://daviidariias.github.io/Template/index.html",
-    "start_url": "https://daviidariias.github.io/Template/index.html",
+    "scope": "https://daviidariias.github.io/TestLayout/index.html",
+    "start_url": "https://daviidariias.github.io/TestLayout/index.html",
     "icons": [{
         "src": "../images/icon.png",
         "type": "image/png",
