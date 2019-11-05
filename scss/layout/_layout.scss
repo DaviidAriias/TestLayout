@@ -12,14 +12,14 @@
     min-height: 100vh;
     //Fluid Atencion en Línea
     &.contMainApp--Fluid{
-        height: calc(100vh - 90px);
+        //height: calc(100vh - 90px);
         //min-height: auto;
         padding-bottom: 3%;
     }
 
     //Fluid Menú Fixed
     &.contMainApp-FluidMenu{
-        height: calc(100vh - 65px);
+        //height: calc(100vh - 65px);
         //min-height: auto;
         padding-bottom: 3%;
     }
@@ -439,7 +439,11 @@ en algunos casos dentro de los mismos */
     background-color: #CDCDCD;
     text-align: center;
     box-shadow: -20px 2px 16px #696969;
-    position: relative;
+
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
     span{
         display: inline-block;
         padding: 5px 0;

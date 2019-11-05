@@ -238,8 +238,8 @@ form .input.input--rangeSlider .rangeslider__handle::after { display: none; }
 .is--scrollLocked { overflow-y: hidden; }
 
 .contMainApp { display: block; width: 100%; max-width: 850px; margin: 0 auto; position: relative; overflow-y: auto; padding-bottom: 3%; text-align: center; min-height: 100vh; }
-.contMainApp.contMainApp--Fluid { height: calc(100vh - 90px); padding-bottom: 3%; }
-.contMainApp.contMainApp-FluidMenu { height: calc(100vh - 65px); padding-bottom: 3%; }
+.contMainApp.contMainApp--Fluid { padding-bottom: 3%; }
+.contMainApp.contMainApp-FluidMenu { padding-bottom: 3%; }
 
 .trackingMain { display: block; width: auto; margin: 20px auto; text-align: center; }
 .trackingMain .trackingMain__dataNav { box-sizing: border-box; margin: 0 auto; text-align: center; width: 100%; counter-reset: step; }
@@ -311,7 +311,7 @@ en algunos casos dentro de los mismos */
 .tooltip.tooltip-moreTop { transform: translateY(-115%); }
 .tooltip.tooltip--fullWidth { width: 100%; }
 
-.support { -webkit-display: flex; -moz-display: flex; -ms-display: flex; display: flex; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; -webkit-align-content: center; -moz-align-content: center; -ms-align-content: center; align-content: center; -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; width: 100%; height: 90px; background-color: #CDCDCD; text-align: center; box-shadow: -20px 2px 16px #696969; position: relative; }
+.support { -webkit-display: flex; -moz-display: flex; -ms-display: flex; display: flex; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; -webkit-align-content: center; -moz-align-content: center; -ms-align-content: center; align-content: center; -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; width: 100%; height: 90px; background-color: #CDCDCD; text-align: center; box-shadow: -20px 2px 16px #696969; position: sticky; bottom: 0; left: 0; right: 0; }
 .support span { display: inline-block; padding: 5px 0; font-size: 14px; color: #575757; }
 .support span:first-of-type { font-size: 34px; }
 
