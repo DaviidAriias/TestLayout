@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos por default RangeSlider.css -->
+    <link rel="stylesheet" href="css/utils/rangeSlider/rangeslider.min.css">
+    <!-- Manifest -->
+    <link rel="manifest" href="js/manifest.json">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="contMainApp contMainApp--Fluid">
+        <!-- Botón "atrás" Mobile -->
+        <a href="javascript:void(0)" class="btnBack">
+            <span class="icon-dv-btnBack"></span>
+            Atrás
+        </a>
+        <!-- Fin Botón "atrás" Mobile -->
+
+        <!-- Tracking alterno - clase: dataNav__step--complete -->
+        <div class="trackingMain">
+            <div class="trackingMain__dataNav">
+                <a href="javascript:void(0)" class="dataNav__step dataNav__step--complete"></a>
+                <a href="javascript:void(0)" class="dataNav__step dataNav__step--complete"></a>
+                <a href="javascript:void(0)" class="dataNav__step"></a>
+                <a href="javascript:void(0)" class="dataNav__step"></a>
+            </div>
+        </div>
+        <!-- data-navn fin -->
+
+        <!-- Tracking Alterno - clase: dataNav__step--active -->
+        <div class="trackingAlter">
+            <div class="trackingAlter__dataNav">
+                <a href="javascript:void(0)" class="dataNav__step"></a>
+                <a href="javascript:void(0)" class="dataNav__step"></a>
+                <a href="javascript:void(0)" class="dataNav__step dataNav__step--active"></a>
+                <a href="javascript:void(0)" class="dataNav__step"></a>
+                <a href="javascript:void(0)" class="dataNav__step"></a>
+            </div>
+        </div>
+        <!-- data-navn fin -->
+
+        <!-- Contenedor y Botones genericos - Siempre poner los botones dentro de contButtons -->
+        <div class="contButtons contButtons--noMrgn">
+            <button type="button" class="button button--secondary button--back">Regresar</button>
+            <button type="button" class="button button--primary" id="triggerModalStudy">Estudio</button>
+            <button type="button" class="button button--primary" id="triggerModal">Modal</button>
+            <button type="button" class="button button--primary" id="triggerCanguro">Canguro</button>
+        </div>
+        <!-- Fin Contenedor y Botones genericos -->
+
+        <!-- Formularios -->
+        <div class="contBox">
+            <div class="container">
+                <form action="">
+                    <div class="input">
+                        <label for="ingresos-mensuales">¿Cuál es el <strong>valor total</strong> de sus ingresos mensuales?</label>
+                        <input type="number" id="ingresos-mensuales" value="" class="input--alert">
+                    </div>
+
+                    <div class="input">
+                        <p class="label">¿Seleccionar como dirección principal?</p>
+                        <label class="radio">
+                            Si
+                            <input type="radio" value="" name="dir-principal"> 
+                            <div class="radio__indicator"></div>
+                        </label>
+                        <label class="radio">
+                            No
+                            <input type="radio" value="" name="dir-principal">
+                            <div class="radio__indicator"></div>
+                        </label>
+                    </div>
+
+                    <div class="input input--noPadding">
+                        <label for="address">¿Cuál es el teléfono de su oficina? (Opcional)
+                            <a href="javascript:void(0)" class="buttonTooltip buttonTooltip--textPosition"><span class="icon-dv-tooltipInfo"></span></a>
+                            <div class="tooltip">
+                                <p>
+                                    Ingrese primero el indicativo de la ciudad, luego el número de teléfono y finalmente la extensión si aplica.
+                                </p>
+                            </div>
+                        </label>
+                        <div class="input--fluid">
+                            <span>+57</span>
+                            <input type="number" placeholder="Indicativo">
+                            <input type="number" placeholder="Número">
+                            <input type="number" placeholder="Ext.">
+                        </div>
+                    </div>
+
+                    <div class="input input--rangeSlider">
+                        <label for="inputRange">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquam eos recusandae doloribus. Accusantium dolore, <strong>corporis id consequuntur praesentium</strong> laboriosam dicta?</label>
+                        <div class="input__quantityNumbers"><strong>1</strong><strong>60</strong></div>
+                        <input id="inputRange" type="range" min="1" max="50" value="10">
+                        <div class="input__quantityTitles"><span>Mes</span><span>Meses</span></div>
+                    </div>
+                    
+                    <div class="input input--rangeSlider input--rangeSliderNumber">
+                        <label for="inputRange2">Lorem ipsum dolor sit <strong>amet consectetur adipisicing elit</strong>. Nulla, et ipsam enim reprehenderit id ad.</label>
+                        <div class="input__quantityNumbers"><strong>1</strong><strong>100</strong></div>
+                        <input id="inputRange2" type="range" min="1" max="100" value="50">
+                        <div class="input__quantityTitles">
+                            <span>Millón</span>
+                            <span>Millones
+                                <!-- Botón Tooltip -->
+                                <a href="javascript:void(0)" class="buttonTooltip buttonTooltip--textPosition">
+                                    <span class="icon-dv-tooltipAsk"></span>
+                                </a>
+                                <!-- Tooltip -->
+                                <div class="tooltip">
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam esse modi ipsam ea labore!
+                                    </p>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label for="actividad-laboral">¿Cuál es su actividad laboral actual?</label>
+                        <select name="" id="actividad-laboral">
+                            <option value="-1" selected disabled>Seleccione una opción</option>
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                        </select>
+                    </div>
+
+                    <div class="input input--otp">
+                        <!--  Label de ejemplo, normalmente no llebva tooltip ¡Importante!-->
+                        <label for="OTP">OTP:</label>
+                        <div class="input">
+                            <input type="text" id="OTP">
+                            <a href="javascript:void(0)" class="buttonTooltip"><span class="icon-dv-tooltipAsk"></span></a>
+                            <div class="tooltip">
+                                <p>
+                                    El celular o correo electrónico al que le enviamos este código, es el mismo que actualmente utilizamos para enviarle la información de los movimientos de sus cuentas y productos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label for="nombre-empresa">¿Cuál es el nombre de su empresa?</label>
+                        <input type="text" id="nombre-empresa" value="">
+                    </div>
+
+                    <div class="input">
+                        <label for="actividad-empresa">¿Cuál es la actividad económica de su empresa?</label>
+                        <input type="text" id="actividad-empresa" value="">
+                    </div>
+
+                    <div class="input">
+                        <label for="tipo-contrato">¿Qué tipo de contrato tiene?</label>
+                        <select name="" id="tipo-contrato">
+                            <option value="-1" selected disabled>Seleccione una opción</option>
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                        </select>
+                    </div>
+
+                    <div class="input">
+                        <label for="ciudad-residencia">¿Cuál es su ciudad de residencia? </label>
+                        <input type="text" id="ciudad-residencia" value="">
+                    </div>
+
+                    <div class="input">
+                        <label for="ciudad-residencia">Campo fecha:</label>
+                        <input type="date" id="ciudad-residencia" value="">
+                    </div>
+                    
+                    <div class="input">
+                        <label for="adressDefault">¿Cuál es su dirección de residencia?</label>
+                        <input type="text" id="adressDefault" value="Carrera 9 # 116 - 08" disabled>
+                        <a href="javascript:void(0)" title="Editar" class="input__buttonAction" id="triggerChangeAddress"><span class="icon-dv-edit"></span></a>
+
+                        <div class="input--fluidBigger" id="adressAltern" style="display: none;">
+                            <select name="">
+                                <option value="-1" selected>Calle</option>
+                                <option value="1">Opción 1</option>
+                                <option value="2">Opción 2</option>
+                            </select>
+                            <input type="text" value="151">
+                            <span>#</span>
+                            <input type="text" value="13A">
+                            <span>-</span>
+                            <input type="text" value="50">
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label for="num-ases">Si está recibiendo ayuda de un <strong>asesor del Banco</strong>, ingrese el código del asesor.</label>
+                        <div class="input">
+                            <input type="number" id="num-ases" value="" placeholder="Opcional">
+                            <a href="javascript:void(0)" class="buttonTooltip">
+                                <span class="icon-dv-tooltipAsk"></span>
+                            </a>
+                            <div class="tooltip">
+                                <p>
+                                    Si le prestaron asesoría, ingrese el código del asesor comercial que lo está
+                                    ayudando con esta solicitud; de lo contrario, no diligencie este espacio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label class="checkbox">
+                            Acepto las autorizaciones <a href="javascript:void(0)">aquí</a> descritas con relación a la consulta y reporte de mi información.
+                            <input type="checkbox">
+                            <div class="checkbox__indicator"></div>
+                        </label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- Fin Formularios -->
+        
+        <!-- Confirmaciones -->
+        <div class="contBox">
+            <div class="container">
+                <h1 class="center noMrgnTop">Verifique las condiciones de su solicitud</h1>
+
+                <div class="result__Confir">
+                    <div class="result__Confir__item">
+                        <strong>Valor del crédito:</strong>
+                        <span>$10.000.000</span>
+                    </div>
+                    <div class="result__Confir__item">
+                        <strong>Plazo del crédito:</strong>
+                        <span>31 meses</span>
+                    </div>
+                    <div class="result__Confir__item">
+                        <strong>Valor aproximado cuota mensual:</strong>
+                        <span>$ 476.000</span>
+                    </div>
+                    <div class="result__Confir__item result__Confir__item--padTooltip">
+                        <strong>Tasa de interés del crédito:</strong>
+                        <span>1.98% M.V. (26.52% E.A.)</span>
+                        <a href="javascript:void(0)" class="buttonTooltip"><span class="icon-dv-tooltipInfo"></span></a>
+                        <div class="tooltip">
+                            <p>
+                                Esta tasa aplicará por la vigencia del crédito. Sin embargo, si llega a caer en mora en
+                                los pagos del crédito, DAVIVIENDA liquidará los intereses de mora sobre el capital
+                                adeudado a la tasa máxima legal permitida por la autoridad competente para el periodo
+                                correspondiente.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="javacript:void(0)" class="result__ConfirToggle" id="result__ConfirToggle">
+                        <span class="result__ConfirButton--more">Más detalles</span>
+                        <span class="result__ConfirButton--less" style="display: none;">Menos detalles</span>
+                        <span class="result__ConfirButton--icon icon-dv-showMore"></span>
+                    </a>
+                    <div class="result__Confir__item--hidden">
+                        <div class="result__Confir__item">
+                            <strong>Plazo del crédito:</strong>
+                            <span>31 meses</span>
+                        </div>
+                        <div class="result__Confir__item">
+                            <strong>Valor aproximado cuota mensual:</strong>
+                            <span>$ 476.000</span>
+                        </div>
+                        <div class="result__Confir__item result__Confir__item--small result__Confir__item--padTooltip">
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong>Asperiores amet ratione consequatur</strong>, odio necessitatibus voluptates nemo aliquam.</span>
+                            <a href="javascript:void(0)" class="buttonTooltip"><span class="icon-dv-tooltipInfo"></span></a>
+                            <div class="tooltip">
+                                <p>
+                                    Esta tasa aplicará por la vigencia del crédito. Sin embargo, si llega a caer en mora en
+                                    los pagos del crédito, DAVIVIENDA liquidará los intereses de mora sobre el capital
+                                    adeudado a la tasa máxima legal permitida por la autoridad competente para el periodo
+                                    correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin container Confirmaciones -->
+
+        <!-- Firma y Autenticación -->
+        <div class="contBox">
+            <div class="container container__results">
+                <h1 class="center noMrgnTop">Marque las siguientes opciones para <br> continuar con el proceso</h1>
+
+                <form action="">
+                    <div class="input">
+                        <label class="checkbox">
+                            Manifiesto que he leído y acepto firmar el <a href="javascript:void(0)">Pagaré</a>.  
+                            <input type="checkbox">
+                            <div class="checkbox__indicator"></div>
+                        </label>
+                    </div>
+                    <div class="input">
+                        <label class="checkbox">
+                            Autorizo a Davivienda a <a href="javascript:void(0)" class="buttonTooltip">debitar automáticamente</a> la cuota de mi crédito de la cuenta seleccionada para el desembolso.
+                            <input type="checkbox">
+                            <div class="checkbox__indicator"></div>
+                            <div class="tooltip">
+                                <p>
+                                    La cuota mensual de su crédito será debitada automáticamente de la cuenta
+                                    que usted seleccione para este fin. <br>
+                                    En caso de no contar con recursos en la cuenta autorizada, Davivienda debitará
+                                    los recursos de otras cuentas o depósitos que posea a su nombre con el Banco.
+                                </p>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="input">
+                        <label class="checkbox">
+                            Manifiesto que he leído y acepto firmar la <a href="javascript:void(0)">declaración de asegurabilidad</a>. 
+                            <input type="checkbox">
+                            <div class="checkbox__indicator"></div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Fin - firma y Autenticación -->
+
+        <!-- Resultados -->
+        <div class="contBox contBox--boxConfirm contBox--desktop">
+            <div class="contBox--boxConfirm__headerConfirm">
+                <strong>Crédito Móvil</strong>
+            </div>
+            <div class="container">
+                <div class="result__alert">
+                    <div class="result__alert--main result__alert--main--center">
+                        <span class="icon-dv-resultCheck icon"></span>
+                        <p>
+                            <strong class="big">Felicitaciones</strong> <br>
+                            Su crédito móvil ha sido desembolsado.
+                        </p>
+                    </div>
+                    <div class="result__alert--mainExtra">
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde quos molestiae officiis impedit perferendis totam veniam cupiditate libero ea, doloremque fugiat praesentium aliquam a ab vitae in eaque possimus iste nesciunt explicabo, eos labore itaque?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="result__alert">
+                    <div class="result__alert--main result__alert--main--center">
+                        <span class="icon-dv-resultFail icon"></span>
+                        <p>
+                            <strong class="big">Transacción erronea</strong> <br>
+                            Su crédito móvil no ha sido desembolsado.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="result__alert">
+                    <div class="result__alert--main result__alert--main--center">
+                        <span class="icon-dv-resultAlert icon"></span>
+                        <p>
+                            <strong class="big">Transacción en proceso</strong> <br>
+                            Su crédito móvil se enceuntra en proceso de desembolso.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="result__Confir">
+                    <div class="result__Confir__item">
+                        <strong>Valor del crédito:</strong>
+                        <span>$10.000.000</span>
+                    </div>
+                    <div class="result__Confir__item">
+                        <strong>Plazo del crédito:</strong>
+                        <span>31 meses</span>
+                    </div>
+                    <div class="result__Confir__item">
+                        <strong>Valor aproximado cuota mensual:</strong>
+                        <span>$ 476.000</span>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <!-- Fin Resultados -->
+
+        <!-- Textos Helpers -->
+        <div class="contTextInformation">
+            <p>No olvide consultar las condiciones generales de su seguro, en nuestra
+                página web <strong>www.segurosbolivar.co</strong>
+            </p>
+        </div>
+        <!-- Fin Textos Helpers -->
+
+        <!--  Textos de Terminos y Condiciones-->
+        <div class="contBox contBox--desktop">
+            <div class="container container__textTYC">
+                <h2 class="noMrgnTop"> Proteja sus pagos </h2>
+                <p>
+                    El seguro Protección de Pagos cubre hasta 6 cuotas mensuales de su crédito (Hasta $4.000.000
+                    millones de COP por cuota) dejadas de pagar por su usted debido a la pérdida de su empleo por una
+                    causa ajena a la decisión propia (renuncia o abandono del trabajo), o, por una hospitalización mayor
+                    a 30 días en caso de ser independiente ó pensionado. Además, sin importar su actividad económica,
+                    sus pagos estarán protegidos en caso de Incapacidad Temporal o permanente.
+                    <br><br>
+                    Al adquirir el Seguro de protección de pagos usted autoriza a Seguros Bolívar para:
+                    <br><br>
+                    • Incluir la prima de seguro dentro de la factura del crédito que tendrá los pagos cubiertos.
+                    <br><br>
+                    • Tener acceso, solicitar, recibir y conservar su historia clínica y de trabajo de cualquier entidad
+                    de salud, empleador o agencia de empleos.
+                    <br><br>
+                    • Mantener la cobertura ininterrumpida una vez termine la vigencia, sin perjuicio de la facultad que
+                    le asiste al Asegurado de dar por terminado el contrato o de manifestar su decisión de no renovarlo
+                    en cualquier momento.
+                    <br><br>
+                    • Cancelar el seguro en caso de incurrir en mora mayor a 60 días del pago de la cuota del crédito.
+                </p>
+            </div>
+        </div>
+
+        <!-- Textos Helpers -->
+        <div class="contTextInformation contTextInformation--noMrgnBottom contTextInformation--big">
+            <p><strong>¿Desea cancelar o aceptar el producto?</strong></p>
+        </div>
+        <!-- Fin Textos Helpers -->
+
+        <!-- Contenedor y Botones igual ancho -->
+        <div class="contButtons contButtons--sameWidth">
+            <button type="button" class="button button--secondary">Cancelar</button>
+            <button type="button" class="button button--primary" onclick="window.location.href='1-Beneficios.html'">Ajuste automático</button>
+        </div>
+        <!-- Fin Contenedor y Botones igual ancho -->
+
+    </section>
+
+
+    <!-- Proceso de estudio de crédito -->
+    <section class="contStudyProcess" id="StudyProcess">
+        <h2 class="contStudyProcess__title">Estamos evaluando su solicitud.</h2>
+        <div class="contStudyProcess__clock">
+            <svg id="clock" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 373 373" style="enable-background:new 0 0 373 373;" xml:space="preserve">
+                <style type="text/css">.st0{fill:#FFFFFF;}</style>
+                    <g>
+                        <g>
+                        <path class="st0" d="M186.5,0C83.5,0,0,83.5,0,186.5S83.5,373,186.5,373S373,289.5,373,186.5C372.8,83.5,289.4,0.1,186.5,0z      M194.5,356.6v-32.8c0-4.4-3.6-8-8-8s-8,3.6-8,8v32.8c-87.7-4.2-157.9-74.4-162.1-162.1h32.8c4.4,0,8-3.6,8-8s-3.6-8-8-8H16.4      C20.6,90.8,90.8,20.6,178.5,16.4v32.8c0,4.4,3.6,8,8,8s8-3.6,8-8V16.4c87.7,4.2,157.9,74.4,162.1,162.1h-32.8c-4.4,0-8,3.6-8,8      s3.6,8,8,8h0.1h32.8C352.4,282.2,282.2,352.4,194.5,356.6z"></path>
+                        </g>
+                    </g>
+                <path class="st0" d="M186.4,186.5L186.4,186.5c-4.4,0-7.9-3.5-7.9-7.9v-76.2c0-4.4,3.5-7.9,7.9-7.9h0c4.4,0,7.9,3.5,7.9,7.9v76.2  C194.3,182.9,190.7,186.5,186.4,186.5z"></path>
+                <path class="st0 clock-animate" d="M186.4,186.7L186.4,186.7c3,3.2,2.8,8.2-0.4,11.1l-79.5,73.9c-3.2,3-8.2,2.8-11.1-0.4l0,0  c-3-3.2-2.8-8.2,0.4-11.1l79.5-73.9C178.5,183.4,183.5,183.6,186.4,186.7z"></path>
+            </svg>
+        </div>
+        <p class="contStudyProcess__text">
+            <span>Espere un momento por favor…</span>
+            <span>Recuerde que este proceso de evaluación <strong>NO</strong> tiene cobros por comisión de tramite.</span>
+            <span>¡No use intermediarios!</span>
+        </p>
+    </section>
+    <!-- Fin Proceso de estudio de crédito -->
+
+    <!-- Modales -->
+    <section class="contModal" id="modalDefault">
+        <div class="modal">
+            <div class="modal__body">
+                <p>Lo invitamos a realizar la <strong>encuesta de perfil</strong> de 
+                    riesgo para ofrecerle la mejor asesoría.
+                </p>
+            </div>
+            <div class="contButtons contButtons--sameWidth">
+                <button type="button" class="button button--secondary" id="triggerModalClose">Cancelar</button>
+                <button type="button" class="button button--primary">Sí, si quiero</button>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Modales -->
+
+    <!-- Canguros -->
+    <section class="contCanguroMain" id="contCanguro">
+        <div class="containerCanguro">
+    
+            <div class="containerCanguro__header">
+                <div class="header__title">
+                    <img src="images/icon-dv-figureKangaroo.svg" alt="icon">
+                    <h2 class="noMrgn">Seguro Vida Online</h2>
+                </div>
+                <a href="javascript:void(0)" class="header__closeCanguro" id="closeCanguro" title="Cerrar"><span class="icon-dv-closeKangaroo"></span></a>
+            </div>
+
+            <div class="containerCanguro__content">
+                <h2 class="noMrgn">¿Quiere proteger a su familia?</h2>
+                <p class="paragraphCanguro">
+                    Cubra los gastos <strong>de su hogar</strong> en caso de: <br>
+                </p>
+                <div class="list">
+                    <div class="list__item">
+                        <span class="icon-dv-listItemA"></span>
+                        <p>Muerte por cualquier causa.</p>
+                    </div>
+                    <div class="list__item">
+                        <span class="icon-dv-listItemA"></span>
+                        <p>Incapacidad total y permanente.</p>
+                    </div>
+                </div>
+                <a href="javascript:void(0)" class="content__link">Ver Términos y Condiciones</a>
+                <div class="contButtons contButtons--sameWidth">
+                    <button type="button" class="button button--secondary" id="triggerCanguroClose">Omitir</button>
+                    <button type="button" class="button button--primary">Adquirir</button>
+                </div>
+                <div class="contTextInformation contTextInformation--noMrgnTop contTextInformation--mrgnBottom">
+                    <p class="text-description">Este seguro es expedido por <br> <strong>Seguros Bolívar S.A.</strong></p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    <!-- Fin Canguros -->
+
+    <!-- Atención en línea - recordar poner la clase ".contMainApp--Fluid" al ".contMainApp"-->
+    <a href="javascript:void(0)" class="support">
+        <span class="icon-dv-support"></span>
+        <span>Atención en Línea</span>
+    </a>
+    <!-- Fin Atención en línea"-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
