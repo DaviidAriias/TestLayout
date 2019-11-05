@@ -1,0 +1,33 @@
+/*---------------------------------------------------
+
+============ Main - Proyecto ============
+* Nombre del proyecto: Styles Compiled
+* Nombre del archivo: styles.scss | styles.css
+* Descripción: Hoja de estilos principal App Davivienda
+* Autor: Movilidad y Canales Banco Davivienda
+
+---------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:300,400,500,700);
+
+@charset "UTF-8";
+
+
+//-------- Admin SCSS
+@import 'admin/_admin';
+
+
+//-------- Base SCSS
+@import 'base/_base';    
+
+
+//-------- Modules Compiled SCSS
+@import 'modules/_modules'; 
+
+
+//-------- Main Layout SCSS
+@import 'layout/_layout';
+
+
+//-------- Modules Compiled SCSS //Mediaqueries en esta parte para no tener problemas al compilar todos los SCSS
+@import 'admin/mediaqueries/_mediaqueries'
+

@@ -1,0 +1,660 @@
+//Boton regresar - Mobile
+.btnBack {
+    @include prefix((
+        display: flex,
+        align-items: center,
+        justify-content: flex-start,
+    ), webkit moz ms);
+    
+    width: 70px;
+    margin-top: 20px;
+    margin-left: 5%;
+    
+    color: $negro-57;
+    font-size: $font-p;
+    font-family: $roboto;
+    span{
+        font-size: $font-p + 10;
+        margin-right: 5px;
+    }
+}
+
+//Container y Botones genericos
+.contButtons{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    &.contButtons--noMrgn{
+        margin: 0 0;
+    }
+    &.contButtons--sameWidth{
+        font-size: 0;
+        box-sizing: border-box;
+        .button{
+            width: 43%;
+            margin: 0 2% 20px;
+        }
+    }
+}
+
+//Botones genericos
+.button{
+    display: inline-block;
+    width: 35%;
+    min-width: 110px;
+    margin: 0 10px 20px;
+    border: none;
+    
+    outline: none;
+    font-size: $font-p + 4;
+    font-family: $roboto;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding: 9px 15px;
+    border-radius: 6px;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: inherit;
+
+    background-color: $gris-93;
+    &:hover{
+        background-color: darken($gris-93, 10%);
+    }
+    &.button--back{
+        display: none;
+    }
+    &.button--secondary{
+        background-color: $gris-93;
+        &:hover{
+            background-color: darken($gris-93, 10%);
+        }
+    }
+    &.button--primary{
+        background-color: $rojo;
+        &:hover{
+            background-color: darken($rojo, 10%);
+        }
+    }    
+}
+
+//Formularios
+form {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    transition-duration: .3s;
+    //Container Iputs - !Importante!
+    .input{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        margin-bottom: 15px;
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+        //Spans
+        span{
+            display: inline-block;
+            font-size: $font-p;
+            color: $negro-57;
+        }
+        //Labels Inputs
+        label, .label{
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 5px;
+            position: relative;
+
+            font-family: $roboto;
+            font-size: $font-p;
+            color: $negro-57;
+            text-align: justify;
+            strong{
+                font-weight: bold;
+            }
+        }
+        //Inputs
+        select, textarea, input[type="text"], input[type="tel"], input[type="email"], input[type="number"], input[type="date"], input[type="time"] {
+            display: inline-block;
+            width: 100%;
+            height: 35px;
+            padding: 8px 40px 8px 8px;
+            border-radius: 6px;
+            background-color: #fff;
+
+            @include prefix((
+                border: 1.4px solid lighten($gris-cc, 5%)
+            ), webkit moz ms);
+
+            font-size: $font-p;
+            color: $negro-57;
+            font-family: $roboto;
+            font-weight: 400;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            transition-duration: .2s;
+            &:hover{
+                border: 1.4px solid darken($gris-cc, 25%);
+            }
+            &:disabled {
+                background-color: #fff;
+                color: $negro-57;
+
+                cursor: not-allowed;
+            }
+            &.input--alert{
+                border-color: $rojo;
+            }
+        }
+        //Botones number
+        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        select{
+            background: URL('../images/icon-dv-arrowDown.svg') no-repeat 98% 50% #fff;
+            background-size: 14px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type=date]{
+            background: URL('../images/icon-dv-calendar.svg') no-repeat 98% 50% #fff;
+            background-size: 14px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            text-transform: uppercase;
+            &::-webkit-inner-spin-button{
+                display: none; 
+                -webkit-appearance: none;
+            }
+        }
+
+        //Input fluid
+        .input--fluid{
+            @include prefix((
+                display: flex,
+                flex-direction: row,
+                justify-content: space-between,
+                align-items: center,
+            ), webkit ms moz);
+            input{
+                width: 28%;
+                text-align: center;
+                padding: 6px;
+            }
+        }
+
+        .input--fluidBigger{
+            @include prefix((
+                display: flex,
+                flex-direction: row,
+                justify-content: space-between,
+                align-items: center,
+            ), webkit ms moz);
+            select{
+                width: 30%;
+                background-position: 93% 50%;
+            }
+            input{
+                width: 20%;
+                text-align: center;
+                padding: 6px;
+            }
+        }
+        
+        //Botones de acción
+        .input__buttonAction{
+            display: inline-block;
+            width: auto;
+            height: auto;
+
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+            transform: translateY(-50%);
+            span{
+                font-size: $font-p + 3;
+            }
+        }
+
+
+        //Radio Buttons
+        .radio{
+            position: relative;
+            display: inline-block;
+            padding-left: 25px;
+            width: auto;
+            float: left;
+            margin-left: 15%;
+            font-family: $roboto;
+            font-weight: 100;
+            padding-top: 3px;
+            margin-bottom: 0;
+            cursor: pointer;
+            &:first-of-type{
+                margin-left: 0px;
+            }
+            &.radio--mrgnLeft{
+                margin-left: 25%;
+            }
+            input{
+                display: none;
+                &:checked~.radio__indicator {
+                    &::after {
+                        opacity: 9;
+                    }
+                }
+            }
+
+            //Radio Button
+            .radio__indicator {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 21px;
+                width: 21px;
+                background: transparent;
+                border: 1.4px solid lighten($gris-cc, 5%);
+                background-color: white;
+                border-radius: 50%;
+
+                transition-duration: .2s;
+                &:hover{
+                    border: 1.4px solid darken($gris-cc, 25%);
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    margin: auto;
+    
+                    width: 15px;
+                    height: 15px;
+                    background-color: $rojo;
+                    border-radius: 50%;
+    
+                    box-sizing: unset;
+                    opacity: 0;
+                    transition-duration: .2s;
+                }
+            }
+
+            //Radiocards - Important!
+            &.radio--optionCard{
+                @include prefix((
+                    display: flex,
+                    align-items: center,
+                    justify-content: space-between
+                ), webkit moz ms);
+                width: 100%;
+                min-height: 85px;
+                margin: 0 auto;
+                float: none;
+                background-color: #fff;
+                box-shadow: 1px 3px 6px #b9b9b9;
+                padding: 15px 100px 15px 15px;
+                border-radius: 15px;
+                position: relative;
+                z-index: 9;
+                &.optionCard--semiRounded{
+                    border-radius: 5px;
+                    .optionCard__image{
+                        border-radius: 5px;
+                    }
+                }
+                &.radio--optionCard--toggle{
+                    padding-bottom: 20px;
+                    margin-bottom: 15px;
+                }
+                .radio__indicator{
+                    position: relative;
+                }
+                .optionCard__info{
+                    width: calc(100% - 25px);
+                    display: inline-block;
+                    padding-left: 10px;
+                    text-align: left;
+                    span{
+                        display: inline-block;
+                        width: 100%;
+                        margin-bottom: 10px;
+                        font-size: $font-p - 2;
+                        &:last-of-type{
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .optionCard__image{
+                    display: inline-block;
+                    width: 80px;
+                    height: 80%;
+                    position: absolute;
+                    right: 10px;
+                    border-radius: 7px;
+                    background-position: center;
+                    background-size: cover;
+                    background-image: url(../images/thumbOptionCard-1.jpg);
+                }
+                .optionCard__seeMore{
+                    display: inline-block;
+                    width: auto;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    margin: auto;
+                    padding: 3px 10px;
+                    background-color: #fff;
+
+                    transform: translate(-50%, 50%);
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.09), 0 3px 6px rgba(0, 0, 0, 0.09);
+                    font-size: $font-p - 2;
+                    text-align: center;
+                    border-radius: 100px;
+                    text-decoration: none;
+                    z-index: 10;
+                    transition-duration: .2s;
+                    .icon{
+                        display: inline-block;
+                        font-size: $font-p - 2;
+                        margin-right: 5px;
+                        position: relative;
+                        top: 1px;
+                        transition-duration: .2s;
+                    }
+                    .icon--isToggle{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            
+            
+        }
+        
+        //Extrainfo - Card Down - !important
+        .optionCard__extraInfo{
+            display: inline-block;
+            width: 93%;
+            max-width: 550px;
+            background-color: $blanco-f8;
+            z-index: 9;
+            margin-top: -5px;
+            padding: 15px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 1px 3px 6px #d4d4d4;
+            &.optionCard__extraInfo--semiRounded{
+                border-radius: 5px;
+            }
+            &.optionCard__extraInfo--toggle{
+                padding-top: 20px;
+                transform: translateY(-15px);
+            }
+            .item{
+                @include prefix((
+                    display: flex,
+                    align-items: flex-start,
+                    justify-content: flex-start
+                ), webkit moz ms);
+                margin-bottom: 10px;
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+                span.icon{
+                    display: inline-block;
+                    width: 100%;
+                    max-width: 9px;
+                    margin-right: 10px;
+                    padding-top: 3px;
+                    font-size: $font-p - 7;
+                }
+                span, strong{
+                    display: inline-block;
+                    vertical-align: top;
+                    font-size: $font-p - 2;
+                    color: #575757;
+                    width: 100%;
+                    text-align: justify;
+                    text-align-last: left;
+                    strong{
+                        font-weight: bold;
+                    }
+                }
+                strong{
+                    font-weight: bold;
+                    font-size: $font-p;
+                    display: inline-block;
+                    width: auto;
+                }
+                &.item--typeColumn{
+                    display: inline-block;
+                    width: 100%;
+                    font-size: 0;
+                    span, strong{
+                        display: inline-block;
+                        width: 50%;
+                        vertical-align: top;
+                        font-size: $font-p - 2;
+                    }
+                    strong{
+                        text-align: right;
+                        text-align-last: right;
+                    }
+                }
+            }
+        }
+
+        //Checkboxes
+        .checkbox{
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            padding-top: 4px;
+            padding-bottom: 5px;
+            cursor: pointer;
+            font-size: $font-p;
+            color: $negro-57;
+            font-weight: 400;
+            text-align: justify;
+            font-family: $roboto;
+            margin-bottom: 0;
+            strong, a {
+                display: inline;
+                font-family: $roboto;
+                color: $negro-57;
+                font-weight: bold;
+                text-decoration: underline;
+                &.noTextDecoration {
+                    text-decoration: none;
+                }
+            }
+            input[type="checkbox"] {
+                opacity: 0;
+                display: none;
+                &:checked~.checkbox__indicator {
+                    &::after {
+                        opacity: 9;
+                    }
+                }
+            }
+            .checkbox__indicator {
+                position: absolute;
+                top: 2px;
+                left: 0;
+                height: 21px;
+                width: 21px;
+                background: transparent;
+                border: 1px solid $gris-cc;
+                background-color: white;
+                border-radius: 6px;
+
+                transition-duration: .2s;
+                &:hover{
+                    border: 1.4px solid darken($gris-cc, 25%);
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    margin: auto;
+
+                    width: 15px;
+                    height: 15px;
+                    background-color: $rojo;
+                    border-radius: 4px;
+
+                    box-sizing: unset;
+                    opacity: 0;
+                    transition-duration: .2s;
+                }
+            }
+
+            //Para los toltips que están dentro de los Checkbox
+            .buttonTooltip{
+                position: relative;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                transform: inherit;
+            }
+        }
+
+        &.input--otp{
+            input{
+                text-align: center;
+                letter-spacing: 5px;
+                font-weight: bold;
+                color: $negro-57;
+                font-size: $font-p + 4;
+            }
+        }
+
+        //RangeSliders
+        &.input--rangeSlider{
+            label{
+                margin-bottom: 30px;
+            }
+            //Focus input reset
+            input[type="range"]{
+                &:focus+.rangeslider{
+                    .rangeslider__handle{
+                        box-shadow: 1px 1px 1px #ccc;
+                    }
+                }
+            }
+            &.input--rangeSliderNumber{
+                .input--rangeSlider__bubble{
+                    font-size: $font-p - 4;
+                    &::before{
+                        content: "$";
+                        font-size: $font-p - 4;
+                    }
+                }
+            }
+            .input__quantityNumbers, .input__quantityTitles{
+                @include prefix((
+                    display: flex,
+                    align-items: center,
+                    justify-content: space-between
+                ), webkit moz ms);
+                width: 100%;
+                margin-bottom: 5px;
+                span, strong{
+                    color: $negro-57;
+                    font-size: $font-p - 2;
+                }
+                strong{
+                    font-weight: bold;
+                    color: #a3a3a3;
+                }
+            }
+            .input__quantityTitles{
+                margin-bottom: 0;
+                margin-top: 5px;
+            }
+
+            //RangeSlider Bubble
+            .input--rangeSlider__bubble {
+                display: block;
+                width: 30px;
+                height: 30px;
+                line-height: 20px;
+                padding: 5px;
+                position: absolute;
+                bottom: -90%;
+                margin-bottom: 25px;
+                margin-left: -15px;
+                text-align: center;
+                border-radius: 50px;
+                background-color: $gris-a7;
+
+                font-size: $font-p - 2;
+                color: #fff;
+                &:after{
+                    content: "";
+                    border-width: 11px;
+                    border-style: solid;
+                    border-color: transparent;
+                    display: block;
+                    margin: auto;
+                    width: 1px;
+                    position: absolute;
+                    bottom: -6px;
+                    left: 50%;
+
+                    border: 10px solid $gris-a7;
+                    border-bottom: none;
+                    border-left-color: transparent;
+                    border-right-color: transparent;
+
+                    @include prefix((
+                        transform: translateX(-50%)
+                    ), webkit mox ms);
+                }
+            }
+
+            //Rangeslider bar
+            .rangeslider{
+                &.rangeslider--horizontal{
+                    height: 6px;
+                    border: 0;
+                    background-color: $gris-cc;
+                    box-shadow: none;
+                }
+                .rangeslider__fill{
+                    background-color: $gris-a7;
+                    box-shadow: none;
+                }
+            }
+
+            //RangeSlider Handle
+            .rangeslider__handle{
+                background-image: none;
+                background: #fff;
+                width: 20px;
+                height: 10px;
+                border-radius: 25px;
+                top: -2px;
+                box-shadow: 1px 1px 1px #ccc;
+                border: 0;
+                outline: none;
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="contMainApp">
+        <!-- Botón "atrás" Mobile -->
+        <a href="javascript:void(0)" class="btnBack">
+            <span class="icon-dv-btnBack"></span>
+            Atrás
+        </a>
+        <!-- Fin Botón "atrás" Mobile -->
+
+        <!-- Confirmaciones -->
+        <div class="contBox">
+            <div class="container">
+                <h1 class="center noMrgnTop">Verifique las condiciones de su solicitud</h1>
+
+                <div class="result__Confir">
+                    <div class="result__Confir__item">
+                        <strong>Valor del crédito:</strong>
+                        <span>$10.000.000</span>
+                    </div>
+                    <div class="result__Confir__item">
+                        <strong>Plazo del crédito:</strong>
+                        <span>31 meses</span>
+                    </div>
+                    <div class="result__Confir__item">
+                        <strong>Valor aproximado cuota mensual:</strong>
+                        <span>$ 476.000</span>
+                    </div>
+                    <div class="result__Confir__item result__Confir__item--padTooltip">
+                        <strong>Tasa de interés del crédito:</strong>
+                        <span>1.98% M.V. (26.52% E.A.)</span>
+                        <a href="javascript:void(0)" class="buttonTooltip"><span class="icon-dv-tooltipInfo"></span></a>
+                        <div class="tooltip">
+                            <p>
+                                Esta tasa aplicará por la vigencia del crédito. Sin embargo, si llega a caer en mora en
+                                los pagos del crédito, DAVIVIENDA liquidará los intereses de mora sobre el capital
+                                adeudado a la tasa máxima legal permitida por la autoridad competente para el periodo
+                                correspondiente.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="javacript:void(0)" class="result__ConfirToggle" id="result__ConfirToggle">
+                        <span class="result__ConfirButton--more">Más detalles</span>
+                        <span class="result__ConfirButton--less" style="display: none;">Menos detalles</span>
+                        <span class="result__ConfirButton--icon icon-dv-showMore"></span>
+                    </a>
+                    <div class="result__Confir__item--hidden">
+                        <div class="result__Confir__item">
+                            <strong>Plazo del crédito:</strong>
+                            <span>31 meses</span>
+                        </div>
+                        <div class="result__Confir__item">
+                            <strong>Valor aproximado cuota mensual:</strong>
+                            <span>$ 476.000</span>
+                        </div>
+                        <div class="result__Confir__item result__Confir__item--small result__Confir__item--padTooltip">
+                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong>Asperiores amet ratione consequatur</strong>, odio necessitatibus voluptates nemo aliquam.</span>
+                            <a href="javascript:void(0)" class="buttonTooltip"><span class="icon-dv-tooltipInfo"></span></a>
+                            <div class="tooltip">
+                                <p>
+                                    Esta tasa aplicará por la vigencia del crédito. Sin embargo, si llega a caer en mora en
+                                    los pagos del crédito, DAVIVIENDA liquidará los intereses de mora sobre el capital
+                                    adeudado a la tasa máxima legal permitida por la autoridad competente para el periodo
+                                    correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin container Confirmaciones -->
+
+        <!-- Contenedor y Botones genericos - Siempre poner los botones dentro de contButtons -->
+        <div class="contButtons">
+            <button type="button" class="button button--secondary button--back" onclick="window.location.href='7-Firma.html'">Regresar</button>
+            <button type="button" class="button button--primary" id="triggerModalStudy">Continuar</button>
+        </div>
+        <!-- Contenedor y Botones genericos -->
+
+    </section>
+
+    <!-- Proceso de estudio de crédito -->
+    <section class="contStudyProcess" id="StudyProcess">
+        <h2 class="contStudyProcess__title">Estamos evaluando su solicitud.</h2>
+        <div class="contStudyProcess__clock">
+            <svg id="clock" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 373 373" style="enable-background:new 0 0 373 373;" xml:space="preserve">
+                <style type="text/css">.st0{fill:#FFFFFF;}</style>
+                    <g>
+                        <g>
+                        <path class="st0" d="M186.5,0C83.5,0,0,83.5,0,186.5S83.5,373,186.5,373S373,289.5,373,186.5C372.8,83.5,289.4,0.1,186.5,0z      M194.5,356.6v-32.8c0-4.4-3.6-8-8-8s-8,3.6-8,8v32.8c-87.7-4.2-157.9-74.4-162.1-162.1h32.8c4.4,0,8-3.6,8-8s-3.6-8-8-8H16.4      C20.6,90.8,90.8,20.6,178.5,16.4v32.8c0,4.4,3.6,8,8,8s8-3.6,8-8V16.4c87.7,4.2,157.9,74.4,162.1,162.1h-32.8c-4.4,0-8,3.6-8,8      s3.6,8,8,8h0.1h32.8C352.4,282.2,282.2,352.4,194.5,356.6z"></path>
+                        </g>
+                    </g>
+                <path class="st0" d="M186.4,186.5L186.4,186.5c-4.4,0-7.9-3.5-7.9-7.9v-76.2c0-4.4,3.5-7.9,7.9-7.9h0c4.4,0,7.9,3.5,7.9,7.9v76.2  C194.3,182.9,190.7,186.5,186.4,186.5z"></path>
+                <path class="st0 clock-animate" d="M186.4,186.7L186.4,186.7c3,3.2,2.8,8.2-0.4,11.1l-79.5,73.9c-3.2,3-8.2,2.8-11.1-0.4l0,0  c-3-3.2-2.8-8.2,0.4-11.1l79.5-73.9C178.5,183.4,183.5,183.6,186.4,186.7z"></path>
+            </svg>
+        </div>
+        <p class="contStudyProcess__text">
+            <span>Espere un momento por favor…</span>
+            <span>Recuerde que este proceso de evaluación <strong>NO</strong> tiene cobros por comisión de tramite.</span>
+            <span>¡No use intermediarios!</span>
+        </p>
+    </section>
+    <!-- Fin Proceso de estudio de crédito -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

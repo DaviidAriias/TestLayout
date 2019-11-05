@@ -1,0 +1,158 @@
+//----------- Mobile
+@media (min-width: 45em) {
+
+}
+
+//----------- Phablet
+@media (min-width: 50em) {
+    body{
+        background-color: #fff;
+    }
+    
+    .btnBack{
+        display: none;
+    }
+
+    .button{
+        font-size: $font-p + 4;
+        width: 20%;
+        &.button--back{
+            display: inline-block;
+        }
+    }  
+
+    .contBox{
+        padding: 15px;
+        background-color: transparent;
+        @include prefix((
+            box-shadow: none
+        ), webkit moz ms);
+        &.contBox--desktop{
+            padding: 15px;
+            background-color: $blanco-f8;
+            @include prefix((
+                box-shadow: 1px 3px 5px #0000002b
+            ), webkit moz ms);
+        }
+        &.contBox--boxConfirm{
+            padding-top: 40px;
+        }
+    }
+
+    form{
+        .input{
+            .radio{
+                &.radio--optionCard{
+                    padding: 15px 135px 15px 15px;
+                    .optionCard__image{
+                        width: 110px;
+                    }
+                    .optionCard__info{
+                        span{
+                            font-size: $font-p;
+                        }
+                    }
+                }
+            }
+            .optionCard__extraInfo{
+                .item{
+                    span{
+                        font-size: $font-p;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+//----------- Tablet
+@media (min-width: 64em) {
+
+}
+
+//----------- laptop
+@media (min-width: 70em) {
+    body{
+        //background-color: yellowgreen;
+    }
+}
+
+//----------- PC
+@media (min-width: 91em) {
+    body{
+        //background-color: royalblue;
+    }
+}
+
+
+// ------------------------------------------------------------------ Mediaqueries iPhones
+
+/* ----------- iPhone 4 and 4S ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+
+}
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2){
+    
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2){
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3){
+    
+}
+
+/* ----------- iPhone X ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3){
+    
+}
+
+// ------------------------------------------------------------------ Mediaqueries Casos Especiales
+@media (max-width: 600px) {
+    .contButtons{
+        .button{
+            font-size: 4vw;
+        }
+    }
+    body{
+        //background-color: royalblue;
+    }
+}
+
+//Mediaquerie ajustando cards
+@media (max-width: 430px) {
+    .container{
+        .container--intBackGray{
+            padding: 10px;
+        }
+    }
+
+    form{
+        .input{
+            .radio{
+                &.radio--optionCard{
+                    padding: 10px 70px 10px 10px;
+                    .optionCard__image{
+                        width: 50px;
+                    }
+                    .optionCard__info{
+                        span{
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

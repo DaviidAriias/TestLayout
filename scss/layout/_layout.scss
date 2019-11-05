@@ -1,0 +1,450 @@
+//Box general - General Container
+.contMainApp{
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    overflow-y: auto;
+    padding-bottom: 3%;
+    text-align: center;
+
+    min-height: 100vh;
+    //Fluid Atencion en Línea
+    &.contMainApp--Fluid{
+        height: calc(100vh - 90px);
+        padding-bottom: 3%;
+    }
+
+    //Fluid Menú Fixed
+    &.contMainApp-FluidMenu{
+        height: calc(100vh - 65px);
+        padding-bottom: 3%;
+    }
+}
+
+//Tracking principal default
+.trackingMain {
+    display: block;
+    width: auto;
+	margin: 20px auto;
+    text-align: center;
+    .trackingMain__dataNav{
+        box-sizing: border-box;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        counter-reset: step;
+        a.dataNav__step{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            background-color: $gris-93;
+            border-radius: 50%;
+            margin-right: 32px;
+            font-size: $font-p;
+            transition-duration: .3s;
+            &:last-of-type{
+                margin-right: 0;
+            }
+            //overflow: hidden;
+            &:first-child{
+                margin-right: 0;
+                &:after{
+                    display: none;
+                }
+            }
+            &:before{
+                content: counter(step);
+                counter-increment: step;
+                color: #fff;  
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: auto;
+                bottom: 0;
+                display: inline-block;
+                height: 20px;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -40%);
+                transition-duration: .2s;
+                width: 20px;
+                
+            }
+            &:after{
+                background-color: $gris-93;
+                border-radius: 50px; 
+                bottom: 0;
+                content: "";
+                height: 3px;
+                margin: auto;       
+                position: absolute;
+                right: 34px;
+                top: 0;
+                transition-duration: .2s;
+                width: 25px;
+            }
+            
+            //Clase Completa
+            &.dataNav__step--complete{
+                background-color: $rojo;
+                border-color: $rojo;
+                opacity: inherit;
+                &:before{
+                    content: counter(step);
+                    color: #fff;
+                    font-size: $font-p;
+                    height: 20px;
+                    left: 50%;
+                    top: 60%;
+                    transform: translate(-50%, -50%);
+                    width: 20px;
+                }
+                &:after{
+                    background-color: $rojo;
+                }
+                &:first-child{
+                    margin-right: 32px;
+                }
+            }
+        }
+    }
+}
+
+//Tracking alternativo default - usado mas en vinculación
+.trackingAlter{
+    display: block;
+    margin: 20px auto;
+    width: auto;
+    .trackingAlter__dataNav{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        a.dataNav__step{
+            display: inline-block;
+            width: 20px;
+            height: 3px;
+            border-radius: 50px;
+            margin: 0 3px;
+            background-color: lighten($negro-57, 60%);
+            position: relative;
+            transition-duration: .3s;
+            overflow: hidden;
+
+            //dataNav__step--actvive | Objeto activo, solo es un dependiendo del caso
+            @keyframes subTrackingActive{
+                0%{
+                    transform: translateX(-100%);
+                    opacity: 0;       
+                }
+                100%{
+                    transform: translateX(0%);    
+                    opacity: 10;    
+                }
+            }
+            &.dataNav__step--active{
+                &::after{
+                    content: "";
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $rojo;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+
+                    transition-duration: .2s;
+                    z-index: 9;
+                    animation-delay: .5s;
+                    @include prefix((
+                        animation: subTrackingActive 1s forwards
+                    ), webkit moz ms);
+                }
+            }
+        }
+    }
+}
+
+//Titulos genericos para todos los elementos
+h1, h2 {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+    
+    text-align: left;
+    font-family: $roboto;
+    font-size: $font-p;
+    font-weight: bold;
+    color: $negro-57;
+    //Clases usables en todos los elementos del corte
+    //.main -> De los titulos mas usados en toda la interface
+    &.main {
+        text-align: center;
+        font-size: $font-p + 2;
+    }
+    //.light -> Fuente light
+    &.light {
+        font-weight: 100;
+    }
+    //.regular -> Fuente regular
+    &.regular {
+        font-weight: normal;
+    }
+    //.justify -> Justificar texto
+    &.justify {
+        text-align: justify;
+    }
+    //.short -> Width más angosto
+    &.short {
+        width: 65%;
+    }
+    //.center -> Centrar el texto del titulo
+    &.center {
+        text-align: center;
+    }
+    //.noMrgnTop -> 0 de margen arriba
+    &.noMrgnTop{
+        margin-top: 0;
+    }
+    //.noMrgnBottom -> 0 de margen abajo
+    &.noMrgnBottom{
+        margin-bottom: 0;
+    }
+    //.noMrgn -> 0 de margen arriba y abajo
+    &.noMrgn{
+        margin: 0;
+    }
+    //En caso de tener un titulo regular se incuye in Strong cuando sea necesario
+    strong{
+        font-weight: bold;
+    }
+}
+
+//Container Box - Shadows - Padding - Background
+.contBox{
+    display: block;
+    border-radius: 6px;
+
+    width: 90%;
+    margin: 20px auto 0;
+    position: relative;
+
+    padding: 15px;
+    background-color: $blanco-f8;
+    @include prefix((
+        box-shadow: 1px 3px 5px #0000002b
+    ), webkit moz ms);
+
+    transition-duration: .2s;
+    &.contBox--boxConfirm{
+        padding-top: 40px;
+    }
+    &.contBox--noBackg{
+        background-color: transparent;
+        box-shadow: inherit;
+    }
+    &.contBox--noPadding{
+        padding: 0;
+    }
+}
+
+//Containers - Importante en todo los flujos
+.container {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    max-width: inherit;
+    text-align: center;
+    position: relative;
+    &.container__textTYC{
+        h2{
+            width: 100%;
+            text-align: center;
+            font-size: $font-p + 3;
+        }
+        p{
+            font-size: $font-p;
+            color: $negro-57;
+            text-align: justify;
+        }
+    }
+    .container--intBackGray{
+        display: block;
+        max-width: 650px;
+        padding: 20px;
+        margin: auto;
+        background-color: $gris-ed;
+        border-radius: 10px;
+    }
+}
+
+
+//Beneficios y Caracteristicas
+.container__benefits{
+    display: inline-block;
+    width: 100%;
+    .benefits__item{
+        @include prefix((
+            display: flex,
+            align-items: center,
+            justify-content: flex-start
+        ), webkit mox ms);
+        width: 100%;
+        margin: 30px 0;
+        &:first-of-type{
+            margin: 0 0;
+        }
+        img{
+            display: inline-block;
+            width: 100%;
+            max-width: 25px;
+        }
+        p{
+            font-family: $roboto;
+            font-size: $font-p;
+            font-weight: 400;
+            padding-left: 15px;
+            text-align: left;
+            color: $negro-57;
+            line-height: 1.3;
+        }
+    }
+}
+
+
+/* Textos de ayuda helpers 10px - 14px | Generalmemnte van fuera de los boxes o
+en algunos casos dentro de los mismos */
+.contTextInformation{
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+    margin: 15px 0;
+    &.contTextInformation--mrgnTop{
+        margin-top: 15px;
+    }
+    &.contTextInformation--mrgnBottom{
+        margin-bottom: 15px;
+    }
+    &.contTextInformation--noMrgnTop{
+        margin-top: 0;
+    }
+    &.contTextInformation--noMrgnBottom{
+        margin-bottom: 0;
+    }
+    &.contTextInformation--big{
+        p{
+            font-size: $font-p;
+        }
+    }
+    p{
+        font-size: $font-p - 2;
+        color: $negro-57;
+        strong{
+            font-weight: bold;
+        }
+    }
+}
+
+//Tooltips | Buttons and Tooltips
+//Button
+.buttonTooltip {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 15px;
+
+    transform: translateY(-50%);
+    span{
+        font-size: $font-p + 2 !important;
+    }
+    &:hover~.tooltip{
+        opacity: 1 !important;
+    }
+
+    //Posicionamiento
+    &.buttonTooltip--textPosition{
+        position: relative;
+        top: 2px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transform: inherit;
+    }
+}
+
+//Tooltip General
+.tooltip{
+    display: inline-block;
+    width: 80%;
+    max-width: 350px;
+    background-color: $gris-cc;
+    border-radius: 6px;
+    padding: 15px;
+    z-index: 9;
+    text-align: justify;
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    transition-duration: .2s;
+
+    opacity: 0;
+    pointer-events: none;
+    p {
+        font-size: $font-p - 2;
+        font-family: $roboto;
+        line-height: 1.3;
+        color: #000;
+        font-weight: 400;
+    }
+    //Pendiente para borrar - hay que testear
+    &.tooltip--top{
+        transform: translateY(12%);
+    }
+    &.tooltip-moreTop{
+        transform: translateY(-115%);
+    }
+
+    &.tooltip--fullWidth{
+        width: 100%;
+    }
+}
+
+//Botón atención en línea
+.support{
+    @include prefix((
+        display: flex,
+        flex-direction: column,
+        align-items: center,
+        align-content: center,
+        justify-content: center
+    ), webkit moz ms);
+    width: 100%;
+    height: 90px;
+    background-color: #CDCDCD;
+    text-align: center;
+    box-shadow: -20px 2px 16px #696969;
+    position: relative;
+    span{
+        display: inline-block;
+        padding: 5px 0;
+        font-size: $font-p;
+        color: $negro-57;
+        &:first-of-type{
+            font-size: $font-p + 20;
+        }
+    }
+}

@@ -1,0 +1,183 @@
+//------------------------------------ Mixins
+// Keyframes - animación
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+    @-ms-keyframes #{$name} {
+      @content;
+    }
+    @keyframes #{$name} {
+      @content;
+    }
+}
+
+//Prefijos 
+@mixin prefix($declarations, $prefixes: ()) {
+    @each $property, $value in $declarations {
+      @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+      }
+  
+      // Output standard non-prefixed declaration
+      #{$property}: $value;
+    }
+}
+
+// How to use prefix
+// .class
+// {
+//       @include prefix((
+//           property: value,
+//       ), webkit moz ms);
+// }
+
+// Border Radius
+@mixin border-radius($bord_left,$bord_right,$bord_down_left,$bord_down_right){
+    -webkit-border-radius: $bord_left $bord_right $bord_down_left $bord_down_right;
+    -moz-border-radius: $bord_left $bord_right $bord_down_left $bord_down_right;
+    -ms-border-radius: $bord_left $bord_right $bord_down_left $bord_down_right;
+    border-radius: $bord_left $bord_right $bord_down_left $bord_down_right;
+}
+
+// Filtro Background's
+@mixin capa_negra($r,$g,$b,$a){
+    background-color: rgba($r,$g,$b,$a);
+    background-blend-mode: overlay;
+}
+
+// Centrar Objetos
+@mixin centrar_y{
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+@mixin centrar_X{
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+@mixin centrar{
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+}
+@mixin no_transform{
+    position: relative;
+    left: inherit;
+    top: inherit;
+    bottom: 0;
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+}
+@mixin no_absolute_center{
+    position: relative;
+    left: inherit;
+    top: inherit;
+    bottom: 0;
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+}
+@mixin no_absolute_center{
+    position: relative;
+    left: inherit;
+    top: inherit;
+    bottom: 0;
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+}
+
+// Rotar objeto
+@mixin rotar ($deg){
+    -ms-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    transform: rotate($deg);
+}
+
+//Opacidad
+@mixin opacities($opacity, $op_n){
+  background-color: $opacity;
+  background-color: rgba($opacity, $op_n);
+}
+
+// Placeholder
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+@mixin disableAutoFill {
+    -webkit-box-shadow: 0 0 0px 9999px white inset !important;
+}
+/// Change background color
+@mixin backgroundColorAutoFill($backgroundColor) {
+    -webkit-box-shadow: 0 0 0px 9999px $backgroundColor inset;
+}
+/// Change text color
+@mixin textColorAutoFill($color) {
+    -webkit-text-fill-color: $color !important;
+}
+/// Change background color on hover
+@mixin hoverBackgroundColorAutoFill($backgroundColor) {
+    &:hover, &:focus {
+      -webkit-box-shadow: 0 0 0px 9999px $backgroundColor inset !important;
+    }
+}
+/// Change text color on hover
+@mixin hoverTextColorAutoFill($color) {
+    &:hover, &:focus {
+      -webkit-text-fill-color: $color !important;
+    }
+}
+
+// Convert REM to PX
+$base-font-num: 100; //Base font-size
+$base-font: $base-font-num * 1%; //Base font-size add percentage !Do not modify
+$rem-base: 16; // Base font size for setting REM units. Default: 16
+
+//REM value in pixels !Do not modify
+$rem-value: $rem-base + px;
+
+// Convert px size to rem 
+@function size($pixel) {
+  @return ($pixel / $rem-base) + rem;
+}
+
+// Text Shorten
+@mixin text-shorten {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+//Oscurecer 
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+//Aclarar
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}

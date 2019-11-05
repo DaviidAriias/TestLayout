@@ -1,0 +1,146 @@
+//Confirmaciones y resultados
+.result__Confir {
+    display: inline-block;
+    width: 100%;
+    .result__Confir__item {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        color: $negro-57;
+        background-color: $gris-ed;
+        margin: 2.5px 0;
+        padding: 13px 15px;
+        border-radius: 5px;
+        &:hover{
+            background-color: darken($gris-ed, 5%);
+        }
+
+        span, strong {
+            display: inline-block;
+            width: 100%;
+            color: $negro-57;
+            font-size: $font-p;
+        }
+
+        strong{
+            font-weight: bold;
+        }
+
+        &.result__Confir__item--padTooltip{
+            padding-right: 40px;
+        }
+        &.result__Confir__item--small{
+            span, strong{
+                display: inline;
+                font-size: $font-p - 2;
+                text-align: justify;
+            }
+        }
+    }
+    //Container oculto
+    .result__Confir__item--hidden{
+        display: none;
+    }
+    .result__ConfirToggle{
+        @include prefix((
+            display: flex,
+            align-items: center,
+            justify-content: space-between
+        ), webkit moz ms);
+        width: 100%;
+        position: relative;
+        margin: 2.5px 0;
+        background-color: $gris-ed;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition-duration: .2s;
+        text-align: left;
+        color: $negro-57;
+        font-size: $font-p;
+        color: $negro-57;
+        transition-duration: .2s;
+        &:hover{
+            background-color: darken($gris-ed, 5%);
+        }
+        .result__ConfirButton--icon{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            font-size: $font-p + 2;
+        }
+    }
+}
+
+//Resultados
+.result__alert{
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-bottom: 5px;
+    transition-duration: .1s;
+    &:hover{
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .result__alert--main{
+        @include prefix((
+            display: flex,
+            align-items: flex-start,
+            flex-direction: row,
+            justify-content: flex-start
+        ), webkitmoz ms);
+        padding: 15px 5%;
+        width: 100%;
+        &.result__alert--main--center{
+            @include prefix((
+                justify-content: flex-center
+                ), webkitmoz ms);
+            }
+        }
+        .result__alert--mainExtra{
+            display: inline-block;
+            padding-bottom: 15px;
+        p{
+            width: 90%;
+        }
+    }
+    .icon{
+        display: inline-block;
+        font-size: $font-p + 26;
+        margin-right: 15px;
+    }
+    p{
+        display: inline-block;
+        width: 80%;
+        font-size: $font-p;
+        color: $negro-57;
+        text-align: justify;
+    }
+    strong{
+        font-weight: bold;
+        &.big{
+            font-size: $font-p + 3;
+        }
+    }
+}
+
+.contBox--boxConfirm__headerConfirm{
+    @include prefix((
+        display: flex,
+        align-items: center,
+        justify-content: space-between
+    ), webkit moz ms);
+    width: 100%;
+    padding: 5px 10px;
+    background-color: $negro-57;
+    border-radius: 6px 6px 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    strong{
+        font-weight: bold;
+        font-size: $font-p + 2;
+        color: #fff;
+    }
+}

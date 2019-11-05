@@ -1,0 +1,77 @@
+//-------------------------- Estudio de credito
+@-webkit-keyframes clock {
+    form {-webkit-transform:rotateZ(0deg);transform:rotateZ(0deg);}
+    to {-webkit-transform:rotateZ(360deg);transform:rotateZ(360deg);}
+}
+@keyframes clock {
+    form {-webkit-transform:rotateZ(0deg);transform:rotateZ(0deg);}
+    to {-webkit-transform:rotateZ(360deg);transform:rotateZ(360deg);}
+}
+.contStudyProcess{
+    @include prefix((
+        display: flex,
+        align-items: center,
+        align-content: center,
+        justify-content: space-evenly,
+        flex-direction: column
+    ), webkit ms moz);
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+    overflow: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 999;
+
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: .3s;
+
+    .contStudyProcess__title {
+        font-size: $font-p + 4;
+        font-weight: bold;
+        text-align: center;
+        width: 85%;
+        color: #fff;
+    }
+    .contStudyProcess__clock {
+        width: 60%;
+        max-width: 300px;
+        .clock-animate {
+            -webkit-animation: clock 6s linear infinite;
+            animation: clock 6s linear infinite;
+            -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+            transform-origin: center;
+        }
+    }
+    .contStudyProcess__text {
+        display: inline-block;
+        width: 85%;
+        text-align: center;
+        span{
+            display: inline-block;
+            width: 100%;
+            font-size: $font-p;
+            font-weight: 300;
+            margin-bottom: 25px;
+            font-weight: normal;
+        }
+        strong{
+            font-size: $font-p;
+            color: $rojo;
+            font-weight: bold;
+        }
+    }
+}
+
+//Evento mostrar Estudio de Crédito
+.contStudyProcess--isShowed{
+    opacity: 1;
+    pointer-events: inherit;
+}
+

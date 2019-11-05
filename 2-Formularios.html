@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Estilos por default RangeSlider.css -->
+    <link rel="stylesheet" href="css/utils/rangeSlider/rangeslider.min.css">
+    <title>Davivienda S.A.</title>
+</head>
+
+<body>
+    <section class="contMainApp">
+        <!-- Botón "atrás" Mobile -->
+        <a href="javascript:void(0)" class="btnBack">
+            <span class="icon-dv-btnBack"></span>
+            Atrás
+        </a>
+        <!-- Fin Botón "atrás" Mobile -->
+
+        <!-- Formularios -->
+        <div class="contBox">
+            <div class="container">
+                
+                <form action="">
+                    <div class="input">
+                        <label for="ingresos-mensuales">¿Cuál es el <strong>valor total</strong> de sus ingresos mensuales?</label>
+                        <input type="number" id="ingresos-mensuales" value="" class="input--alert">
+                    </div>
+
+                    <div class="input">
+                        <p class="label">¿Seleccionar como dirección principal?</p>
+                        <label class="radio">
+                            Si
+                            <input type="radio" value="" name="dir-principal"> 
+                            <div class="radio__indicator"></div>
+                        </label>
+                        <label class="radio">
+                            No
+                            <input type="radio" value="" name="dir-principal">
+                            <div class="radio__indicator"></div>
+                        </label>
+                    </div>
+
+                    <div class="input input--noPadding">
+                        <label for="address">¿Cuál es el teléfono de su oficina? (Opcional)
+                            <a href="javascript:void(0)" class="buttonTooltip buttonTooltip--textPosition"><span class="icon-dv-tooltipInfo"></span></a>
+                            <div class="tooltip">
+                                <p>
+                                    Ingrese primero el indicativo de la ciudad, luego el número de teléfono y finalmente la extensión si aplica.
+                                </p>
+                            </div>
+                        </label>
+                        <div class="input--fluid">
+                            <span>+57</span>
+                            <input type="number" placeholder="Indicativo">
+                            <input type="number" placeholder="Número">
+                            <input type="number" placeholder="Ext.">
+                        </div>
+                    </div>
+
+                    <div class="input input--rangeSlider">
+                        <label for="inputRange">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquam eos recusandae doloribus. Accusantium dolore, <strong>corporis id consequuntur praesentium</strong> laboriosam dicta?</label>
+                        <div class="input__quantityNumbers"><strong>1</strong><strong>60</strong></div>
+                        <input id="inputRange" type="range" min="1" max="50" value="10">
+                        <div class="input__quantityTitles"><span>Mes</span><span>Meses</span></div>
+                    </div>
+                    
+                    <div class="input input--rangeSlider input--rangeSliderNumber">
+                        <label for="inputRange2">Lorem ipsum dolor sit <strong>amet consectetur adipisicing elit</strong>. Nulla, et ipsam enim reprehenderit id ad.</label>
+                        <div class="input__quantityNumbers"><strong>1</strong><strong>100</strong></div>
+                        <input id="inputRange2" type="range" min="1" max="100" value="50">
+                        <div class="input__quantityTitles">
+                            <span>Millón</span>
+                            <span>Millones
+                                <!-- Botón Tooltip -->
+                                <a href="javascript:void(0)" class="buttonTooltip buttonTooltip--textPosition">
+                                    <span class="icon-dv-tooltipAsk"></span>
+                                </a>
+                                <!-- Tooltip -->
+                                <div class="tooltip">
+                                    <p>
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam esse modi ipsam ea labore!
+                                    </p>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label for="actividad-laboral">¿Cuál es su actividad laboral actual?</label>
+                        <select name="" id="actividad-laboral">
+                            <option value="-1" selected disabled>Seleccione una opción</option>
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                        </select>
+                    </div>
+
+                    <div class="input input--otp">
+                        <!--  Label de ejemplo, normalmente no llebva tooltip ¡Importante!-->
+                        <label for="OTP">OTP:</label>
+                        <div class="input">
+                            <input type="text" id="OTP">
+                            <a href="javascript:void(0)" class="buttonTooltip"><span class="icon-dv-tooltipAsk"></span></a>
+                            <div class="tooltip">
+                                <p>
+                                    El celular o correo electrónico al que le enviamos este código, es el mismo que actualmente utilizamos para enviarle la información de los movimientos de sus cuentas y productos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label for="nombre-empresa">¿Cuál es el nombre de su empresa?</label>
+                        <input type="text" id="nombre-empresa" value="">
+                    </div>
+
+                    <div class="input">
+                        <label for="actividad-empresa">¿Cuál es la actividad económica de su empresa?</label>
+                        <input type="text" id="actividad-empresa" value="">
+                    </div>
+
+                    <div class="input">
+                        <label for="tipo-contrato">¿Qué tipo de contrato tiene?</label>
+                        <select name="" id="tipo-contrato">
+                            <option value="-1" selected disabled>Seleccione una opción</option>
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                        </select>
+                    </div>
+
+                    <div class="input">
+                        <label for="ciudad-residencia">¿Cuál es su ciudad de residencia? </label>
+                        <input type="text" id="ciudad-residencia" value="">
+                    </div>
+
+                    <div class="input">
+                        <label for="ciudad-residencia">Campo fecha:</label>
+                        <input type="date" id="ciudad-residencia" value="">
+                    </div>
+                    
+                    <div class="input">
+                        <label for="adressDefault">¿Cuál es su dirección de residencia?</label>
+                        <input type="text" id="adressDefault" value="Carrera 9 # 116 - 08" disabled>
+                        <a href="javascript:void(0)" title="Editar" class="input__buttonAction" id="triggerChangeAddress"><span class="icon-dv-edit"></span></a>
+
+                        <div class="input--fluidBigger" id="adressAltern" style="display: none;">
+                            <select name="">
+                                <option value="-1" selected>Calle</option>
+                                <option value="1">Opción 1</option>
+                                <option value="2">Opción 2</option>
+                            </select>
+                            <input type="text" value="151">
+                            <span>#</span>
+                            <input type="text" value="13A">
+                            <span>-</span>
+                            <input type="text" value="50">
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label for="num-ases">Si está recibiendo ayuda de un <strong>asesor del Banco</strong>, ingrese el código del asesor.</label>
+                        <div class="input">
+                            <input type="number" id="num-ases" value="" placeholder="Opcional">
+                            <a href="javascript:void(0)" class="buttonTooltip">
+                                <span class="icon-dv-tooltipAsk"></span>
+                            </a>
+                            <div class="tooltip">
+                                <p>
+                                    Si le prestaron asesoría, ingrese el código del asesor comercial que lo está
+                                    ayudando con esta solicitud; de lo contrario, no diligencie este espacio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input">
+                        <label class="checkbox">
+                            Acepto las autorizaciones <a href="javascript:void(0)">aquí</a> descritas con relación a la consulta y reporte de mi información.
+                            <input type="checkbox">
+                            <div class="checkbox__indicator"></div>
+                        </label>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+        <!-- Fin Formularios -->
+
+        <!-- Contenedor y Botones genericos - Siempre poner los botones dentro de contButtons -->
+        <div class="contButtons">
+            <button type="button" class="button button--secondary button--back">Regresar</button>
+            <button type="button" class="button button--primary" onclick="window.location.href='3-TarjetasTipo1.html'">Continuar</button>
+        </div>
+        <!-- Contenedor y Botones genericos -->
+
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
