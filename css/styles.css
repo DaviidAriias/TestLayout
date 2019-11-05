@@ -238,8 +238,8 @@ form .input.input--rangeSlider .rangeslider__handle::after { display: none; }
 .is--scrollLocked { overflow-y: hidden; }
 
 .contMainApp { display: block; width: 100%; max-width: 850px; margin: 0 auto; position: relative; overflow-y: auto; padding-bottom: 3%; text-align: center; min-height: 100vh; }
-.contMainApp.contMainApp--Fluid { height: calc(100vh - 90px); min-height: auto; padding-bottom: 3%; }
-.contMainApp.contMainApp-FluidMenu { height: calc(100vh - 65px); min-height: auto; padding-bottom: 3%; }
+.contMainApp.contMainApp--Fluid { height: calc(100vh - 90px); padding-bottom: 3%; }
+.contMainApp.contMainApp-FluidMenu { height: calc(100vh - 65px); padding-bottom: 3%; }
 
 .trackingMain { display: block; width: auto; margin: 20px auto; text-align: center; }
 .trackingMain .trackingMain__dataNav { box-sizing: border-box; margin: 0 auto; text-align: center; width: 100%; counter-reset: step; }

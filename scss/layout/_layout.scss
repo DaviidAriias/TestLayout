@@ -13,14 +13,14 @@
     //Fluid Atencion en Línea
     &.contMainApp--Fluid{
         height: calc(100vh - 90px);
-        min-height: auto;
+        //min-height: auto;
         padding-bottom: 3%;
     }
 
     //Fluid Menú Fixed
     &.contMainApp-FluidMenu{
         height: calc(100vh - 65px);
-        min-height: auto;
+        //min-height: auto;
         padding-bottom: 3%;
     }
 }
